@@ -1,0 +1,39 @@
+SOBRE O JOGO.
+
+Este jogo de batalha naval consiste em acertar todos os barcos e fazer a maior pontuação
+possível. O jogo apresenta 3 níveis (de 1 a 3) , onde cada nível terá uma quantidade única
+de barcos, vidas, bombas e, também, uma matriz de tamanho diferente.
+
+Quando o jogador acertar alguma parte do barco, sua pontuação aumentará, contudo, a pontuação
+que irá para o ranking só será calculada no fim do jogo, ao acertar alguma bomba sua vida será subtraida
+por 1, caso o jogador perca todas as suas vidas sua pontuação é zerada e não irá para o ranking.
+
+EXEMPLOS DO MAPA DO JOGO!
+
+Barcos serão reprensentados por um "+".
+Bombas serão reprensentadas por um "o".
+Água será representada por um "~".
+
+    NÍVEL 3				   NÍVEL 2			   NÍVEL 1
+
+    A B C D E F G H I J K L M N O P        A B C D E F G H I J K L        A B C D E F G H   
+    - - - - - - - - - - - - - - - -        - - - - - - - - - - - - 	  - - - - - - - -
+1 | ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~    1 | ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ +    1 | + + . o ~ ~ ~ ~
+2 | ~ . . . . . . . . . . . . . . .    2 | . . + + o . . . . . . +    2 | . . . . . . . .
+3 | ~ . . + . . o . . . . . . o . .    3 | . . . . . . . . . . . o    3 | ~ ~ ~ ~ ~ . . o
+4 | ~ . . + . . . . . . . . . . . .    4 | . . . . . o . . . . . +    4 | + + + . o + . .
+5 | ~ . . + . . . . . + . . . . . .    5 | . . . . . . . . . . . +    5 | . . . . . + . .
+6 | ~ . . + . . . . . + . . . . . .    6 | . + + + + + . o . . . +    6 | . . + o . + . .
+7 | ~ . . + . . . . . + . . . . . .    7 | . . . o . . . . . . . .    7 | . . + . . + . .
+8 | ~ . . . . . . . . . . . . . . .    8 | . . . . . . . . . . . .    8 | . . + . . + . .
+9 | ~ . . . . . . . . . . . . . . .    9 | . . . . ~ . . . . . . .     
+10| ~ ~ ~ ~ ~ ~ ~ ~ ~ . . . . o . .    10| o . . ~ + + + + . . . .  
+11| ~ ~ ~ ~ ~ ~ ~ ~ ~ . . . . . . .    11| . . . . ~ . . . . . . . 
+12| ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~    12| . . . . . . . . . . . . 
+13| . . . o . . . . . . . . . . . . 
+14| + + + + + . . . . . . . . . . . 	  
+15| . . . . . . . . . . . + + + . . 	  
+16| ~ ~ ~ ~ ~ ~ ~ + + . o . . . . . 	
+
+
+			
