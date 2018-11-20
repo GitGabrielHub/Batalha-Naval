@@ -2,7 +2,8 @@ SOBRE O JOGO.
 
 Este jogo de batalha naval consiste em acertar todos os barcos e fazer a maior pontuação
 possível. O jogo apresenta 3 níveis (de 1 a 3) , onde cada nível terá uma quantidade única
-de barcos, vidas, bombas e, também, uma matriz de tamanho diferente.
+de barcos, vidas, bombas e, também, uma matriz de tamanho diferente. Ao digitar seu nome somente
+será considerado o primeiro ( Ex: Fulano Silva, Nome: Fulano )
 
 Quando o jogador acertar alguma parte do barco, sua pontuação aumentará, contudo, a pontuação
 que irá para o ranking só será calculada no fim do jogo, ao acertar alguma bomba sua vida será subtraida

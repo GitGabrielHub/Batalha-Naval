@@ -4,7 +4,7 @@ from conteudo import *
 
 opcao = 0
 arquivo = open ('Regras.txt' , 'r')
-mostrar_arquivo (arquivo)
+mostrar_regras (arquivo)
 arquivo.close()
 
 dicionario = {'A':1,'B':2,'C':3,'D':4,
@@ -32,7 +32,7 @@ Digite a opção: '''))
     if boole:
         if opcao == 1:
             boole_1,boole_2 = True, False
-            lvl,nick = dados ()
+            lvl,nick = dados()
             tiros_total = 0
             tiros_acertos = 0
             score = 0
@@ -89,7 +89,7 @@ Digite a opção: '''))
             letra = letra_da_matriz(tamanho , dicionario)
             bombs.append(coordenadas_bombas(bombas, [],tamanho,aux,lvl))
             desenhar_matriz(matriz,tamanho,score,vida,tiros_total)
-             
+          
             while (len(aux) != 0) and (vida != 0):
                 try:
                     while boole_1 == True:
@@ -156,20 +156,23 @@ Digite a opção: '''))
                 txt = open('Ranking.txt' , 'r')
             except:
                 txt = open('Ranking.txt' , 'w+') 
-
+                print('oi')
+            
+            
             lista = txt.readlines()
+            
             txt.close()
             arq = open('Ranking.txt' , 'w')
             ranking_sort ( lista , arq )
             arq.close()
             arquivo = open ('Ranking.txt' , 'r')
             print('Ranking:')
-            mostrar_arquivo ( arquivo )
+            mostrar_ranking ( arquivo )
             arquivo.close()
 
         elif opcao == 3:
             arquivo = open ('Regras.txt' , 'r')
-            mostrar_arquivo (arquivo) 
+            mostrar_regras (arquivo) 
             arquivo.close()
             
         elif opcao != 4 :

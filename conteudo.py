@@ -6,23 +6,13 @@ def dados ():
     palavra = ''
     while True:
         
-        nome = input('Digite seu nome: ').split()
-        if len(nome) == 1:
-            nome = nome[0]
-
-        elif len(nome) > 1:
-            for n in range(len(nome)):
-                if n + 1 == len(nome):
-                    palavra+= nome[n]
-                else:
-                    palavra+= nome[n]+' ' 
+        nome = input('Digite seu nome: ').split()       
         if nome == []:
-            
             nome = input('\nDigite seu nome: ').split()
 
         
         else:
-
+            palavra = nome[0]
             break
         print()
 
@@ -45,30 +35,39 @@ def dados ():
 def ranking_sort( lista , arquivo ):
     aux = []
     for n in range(len(lista)):
-        var = lista[n].split()
+        var = lista[n].split()        #### var = ['ab','-','12']
         aux.append(int(var[len(var)-1]))
 
     aux.sort()
     aux.reverse()
-    cont = 0
+    
     while len(lista) != 0:
-        
         for n in range(len(lista)):
             auxiliar = lista[n].split()
-            valor = auxiliar[len(auxiliar)-1]
-            if aux[cont] == int(valor) :
+            valor = auxiliar[len(auxiliar)-1]   #### n = 0 , 1 , 2
+            if aux[0] == int(valor) :
                 arquivo.write(lista[n])
                 break
-        aux.remove(aux[cont])
+        aux.remove(aux[0])
         lista.remove(lista[n])
-       
-def mostrar_arquivo ( manipular ):
+        
+        
+def mostrar_regras ( manipular ):
     for linha in manipular:
         linha = linha.rstrip()
         print(linha)
     
     print()
-    
+
+def mostrar_ranking ( manipular ):
+    cont = 0
+    for linha in manipular:
+        linha = linha.rstrip()
+        print(linha)
+        cont+=1
+        if cont == 5:
+            break
+    print()
 
 def adicionar_coordenadas ( barco_2,barco_3,barco_4,barco_5,vezes,tamanho_barco):
     if barco_2 > vezes:
