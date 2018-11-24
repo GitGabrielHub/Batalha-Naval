@@ -1,7 +1,5 @@
-from time import sleep
-from conteudo import * 
-
-
+from time import sleep    ##### Jogo fecha depois de 5 segundos
+from conteudo import *    ##### Importar arquivo "conteudo"
 opcao = 0
 arquivo = open ('Regras.txt' , 'r')
 mostrar_regras (arquivo)
@@ -31,7 +29,7 @@ Digite a opção: '''))
 
     if boole:
         if opcao == 1:
-            boole_1,boole_2 = True, False
+            boole_1 = True
             lvl,nick = dados()
             tiros_total = 0
             tiros_acertos = 0
@@ -89,34 +87,32 @@ Digite a opção: '''))
             letra = letra_da_matriz(tamanho , dicionario)
             bombs.append(coordenadas_bombas(bombas, [],tamanho,aux,lvl))
             desenhar_matriz(matriz,tamanho,score,vida,tiros_total)
-          
-            while (len(aux) != 0) and (vida != 0):
-                try:
-                    while boole_1 == True:
-                        jogador_x = int(input('Escolha um número de 1 à %d que irá representar a linha: '%tamanho))
-                        if analisar_coordenadas_do_jogador ( jogador_x, tamanho ):
-                            boole_1 = False
+         
+            while (len(aux) != 0) and (vida != 0):             
+                while boole_1 == True:
+                    coord_jogador = input('Escolha um número de 1 à %d e uma letra de "A" a "%s" para atirar: '%(tamanho,letra))
+                    if analisar_coordenadas_do_jogador ( coord_jogador, tamanho ):
+                        print(coord_jogador)
+                        if len(coord_jogador) == 2:
+                            jogador_x = int(coord_jogador[0])
+                            jogador_y = dicionario[coord_jogador[1].upper()]
+                        else:
+                            jogador_x = int(coord_jogador[0] + coord_jogador[1])
+                            jogador_y = dicionario[coord_jogador[2].upper()]
+                        boole_1 = False
 
-                    while boole_2 == False:
-                        jogador_y = input('Escolha uma letra de "A" a "%s" que irá representar a coluna: '%letra)
-                        jogador_y = dicionario[jogador_y.upper()]
-                        if analisar_coordenadas_do_jogador ( jogador_y, tamanho ):
-                            boole_2 = True
-                except:
-                    desenhar_matriz(matriz,tamanho,score,vida,tiros_total)
-                    print('\nEntrada inválida. Tente novamente\n')
-                    
-                if boole_2:
+                    else:
+                        desenhar_matriz(matriz,tamanho,score,vida,tiros_total)
+
+                if boole_1 == False:
                     
                     jogador_x -=1
                     jogador_y -=1
 
                     if [jogador_x , jogador_y] in lista_ja_foi:
                         print('\nCoordenada já escolhida. Tente novamente.')
-                    else:
-                           
-                        lista_ja_foi.append([jogador_x, jogador_y])
-                                             
+                    else:                           
+                        lista_ja_foi.append([jogador_x, jogador_y])                                           
                         if [jogador_x , jogador_y] in aux:
                             matriz[jogador_x][jogador_y] = '+'
                             tiros_acertos +=1
@@ -131,10 +127,9 @@ Digite a opção: '''))
                              matriz[jogador_x][jogador_y] = '~'
 
                         tiros_total+=1
-
                     desenhar_matriz(matriz,tamanho,score,vida,tiros_total)
-                    boole_1,boole_2 = True, False
-
+                    boole_1 = True
+                    
             if len(aux) == 0:
                 score = score -((tiros_total - tiros_acertos) * (10.65 - lvl))
                 print('WINNER!')
@@ -156,17 +151,15 @@ Digite a opção: '''))
                 txt = open('Ranking.txt' , 'r')
             except:
                 txt = open('Ranking.txt' , 'w+') 
-                print('oi')
-            
-            
-            lista = txt.readlines()
-            
+             
+            lista = txt.readlines()           
             txt.close()
             arq = open('Ranking.txt' , 'w')
             ranking_sort ( lista , arq )
             arq.close()
             arquivo = open ('Ranking.txt' , 'r')
-            print('Ranking:')
+            print('RANKING!\n')
+            print('OS CINCO PRIMEIROS:\n')
             mostrar_ranking ( arquivo )
             arquivo.close()
 

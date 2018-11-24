@@ -1,21 +1,18 @@
 import traceback  #### IMPORT PARA CASO OCORRA ALGUM PROBLEMA NA CRIAÇÃO DE COORDENADAS
 import random  #### IMPORT QUE PERMITE GERAR VALORES ALEATÓRIOS
 
-def dados ():
+def dados ():     ###### FUNÇÃO QUE VAI RETORNAR NÍVEL E NOME DO JOGADOR
     lista = [1,2,3]
     palavra = ''
     while True:
         
         nome = input('Digite seu nome: ').split()       
         if nome == []:
-            nome = input('\nDigite seu nome: ').split()
-
-        
+            nome = input('\nDigite seu nome: ').split()        
         else:
             palavra = nome[0]
             break
-        print()
-
+        print(
     while True:
         try:
             lvl = int(input('Digite o nível que deseja jogar: '))
@@ -27,12 +24,11 @@ def dados ():
                 print('\nNível inválido.\n')
         except:
             print('\nValor digitado inválido.\n')
-
     
     return lvl,palavra
         
 
-def ranking_sort( lista , arquivo ):
+def ranking_sort( lista , arquivo ):     ###### FUNÇÃO QUE VAI COLOCAR O RANKING EM ORDEM DESCRECENTE
     aux = []
     for n in range(len(lista)):
         var = lista[n].split()        #### var = ['ab','-','12']
@@ -52,14 +48,14 @@ def ranking_sort( lista , arquivo ):
         lista.remove(lista[n])
         
         
-def mostrar_regras ( manipular ):
+def mostrar_regras ( manipular ):       ###### FUNÇÃO PARA MOSTRAR AS REGRAS
     for linha in manipular:
         linha = linha.rstrip()
         print(linha)
     
     print()
 
-def mostrar_ranking ( manipular ):
+def mostrar_ranking ( manipular ):       ###### FUNÇÃO PARA MOSTRAR OS CINCO PRIMEIROS DO RANKING
     cont = 0
     for linha in manipular:
         linha = linha.rstrip()
@@ -69,9 +65,9 @@ def mostrar_ranking ( manipular ):
             break
     print()
 
-def adicionar_coordenadas ( barco_2,barco_3,barco_4,barco_5,vezes,tamanho_barco):
-    if barco_2 > vezes:
-        
+def adicionar_coordenadas ( barco_2,barco_3,barco_4,barco_5,vezes,tamanho_barco): ###### FUNÇÃO QUE RETORNA O 
+    if barco_2 > vezes:                                                           ###### TAMANHO DO BARCO PARA QUE 
+                                                                                  ###### SE CRIA AS COORDENDAS
         if vezes + 1 == barco_2:
             tamanho_barco += 1
         
@@ -88,7 +84,7 @@ def adicionar_coordenadas ( barco_2,barco_3,barco_4,barco_5,vezes,tamanho_barco)
     
     return tamanho_barco
 
-def coordenada_aleatoria ( pos,tamanho,tamanho_barco ):
+def coordenada_aleatoria ( pos,tamanho,tamanho_barco ):  ######FUNÇÃO PARA RETORN X,Y DEPENDENDO SE FOR 'h' OU 'v'
     if pos == 'h':
         return random.randint(0, (tamanho - 1)),random.randint(0, tamanho - tamanho_barco)
         
@@ -96,19 +92,38 @@ def coordenada_aleatoria ( pos,tamanho,tamanho_barco ):
         return random.randint(0, tamanho - tamanho_barco), random.randint(0, (tamanho - 1))
 
 
-def letra_da_matriz ( tam , dic ):
+def letra_da_matriz ( tam , dic ):  ###### FUNÇÃO PARA RETORNAR LETRA QUE VARIA COM O NÍVEL
     for elementos in dic.items():
         if tam in elementos:
             return elementos[0]
 
-def analisar_coordenadas_do_jogador ( valor, tamanho):
-    if (valor > tamanho or valor < 1):
-        print('\nEntrada não está nos limites do jogo. Tente novamente.\n')
-        desenhar_matriz(matriz,tamanho,score,vida,tiros_total)
+def analisar_coordenadas_do_jogador ( coord, tamanho):     ######FUNÇÃO PARA SABER SE A COORDENADA É VÁLIDA
+    palavras = 'abcdefghijklmnop'
+    if len(coord.split()) == 1:
+        if len(coord) == 2 and coord[0].isnumeric() and not coord[1].isnumeric():
+            x = int(coord[0])
+            y = coord[1].lower()
+
+        elif len(coord) == 3 and (coord[0] and coord[1]).isnumeric() and not coord[2].isnumeric():
+            x = int(coord[0] + coord[1])
+            y = coord[2].lower()
+        else:
+            print('\nCoordenada invalida.')          
+            return False
+    else:
+        print('\nCoordenada invalida.')
         return False
+        
+    if x > tamanho :
+        print('\nNúmero ultrapassa limites do jogo. Tente novamente.')       
+        return False
+
+    elif y not in palavras[0:tamanho]:
+        print('\nLetra ultrapassa ou não existe nos limites do jogo. Tente novamente.')      
+        return False    
     return True
-    
-def posicao_bombas(c_x, c_y, l_b,aux,lvl): 
+
+def posicao_bombas(c_x, c_y, l_b,aux,lvl):     ######FUNÇÃO QUE ANALISA AS COORDENADAS DA BOMBA
 
     x = c_x
     y = c_y
