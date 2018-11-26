@@ -7,12 +7,10 @@ def dados ():     ###### FUNÇÃO QUE VAI RETORNAR NÍVEL E NOME DO JOGADOR
     while True:
         
         nome = input('Digite seu nome: ').split()       
-        if nome == []:
-            nome = input('\nDigite seu nome: ').split()        
-        else:
+        if nome != []:
             palavra = nome[0]
             break
-        print(
+        print()
     while True:
         try:
             lvl = int(input('Digite o nível que deseja jogar: '))
@@ -115,11 +113,11 @@ def analisar_coordenadas_do_jogador ( coord, tamanho):     ######FUNÇÃO PARA S
         return False
         
     if x > tamanho :
-        print('\nNúmero ultrapassa limites do jogo. Tente novamente.')       
+        print('\nValor ultrapassa limites do jogo. Tente novamente.')       
         return False
 
     elif y not in palavras[0:tamanho]:
-        print('\nLetra ultrapassa ou não existe nos limites do jogo. Tente novamente.')      
+        print('\nValor ultrapassa ou não existe dentro dos limites do jogo. Tente novamente.')      
         return False    
     return True
 
@@ -217,7 +215,7 @@ def gerar_matriz(size):  #### Função gerado da matriz do jogo.
 
 
 def desenhar_matriz(matriz,tamanho,score,vida,tiros_total):  #### Função que unicamente desenhará a matriz para o jogador.
-    contador = 1
+    
     letras = 'A B C D E F G H I J K L M N O P'
     barra = ' -'
     print()
@@ -226,10 +224,10 @@ def desenhar_matriz(matriz,tamanho,score,vida,tiros_total):  #### Função que u
     for l in range(len(matriz)):
         for c in range(len(matriz)):
             if c == 0:
-                if contador > 9:
-                    print(contador,end='| ')
+                if l + 1 > 9:
+                    print(l + 1,end='| ')
                 else:
-                    print(contador,end=' | ')
+                    print(l + 1,end=' | ')
             if c ==  len(matriz) - 1 and l == 0:
                 
                 print(matriz[l][c], end='   SCORE ---> %d'%score)
@@ -240,7 +238,7 @@ def desenhar_matriz(matriz,tamanho,score,vida,tiros_total):  #### Função que u
             else:
                 print(matriz[l][c], end=' ')
         print()
-        contador+=1
+        
     print()
 
 def gerar_coordenadas_barco(quant, lista, x, y,achou,aleatorio,aux,tamanho_barco,tamanho):  #### Função recursiva que gera coordenadas, que retorna uma lista com [X,Y]

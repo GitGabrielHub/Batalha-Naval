@@ -88,11 +88,10 @@ Digite a opção: '''))
             bombs.append(coordenadas_bombas(bombas, [],tamanho,aux,lvl))
             desenhar_matriz(matriz,tamanho,score,vida,tiros_total)
          
-            while (len(aux) != 0) and (vida != 0):             
+            while (len(aux) != 0) and (vida != 0):
                 while boole_1 == True:
                     coord_jogador = input('Escolha um número de 1 à %d e uma letra de "A" a "%s" para atirar: '%(tamanho,letra))
                     if analisar_coordenadas_do_jogador ( coord_jogador, tamanho ):
-                        print(coord_jogador)
                         if len(coord_jogador) == 2:
                             jogador_x = int(coord_jogador[0])
                             jogador_y = dicionario[coord_jogador[1].upper()]
