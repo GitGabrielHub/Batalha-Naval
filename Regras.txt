@@ -1,22 +1,22 @@
 SOBRE O JOGO.
 
-Este jogo de batalha naval consiste em acertar todos os barcos e fazer a maior pontuaÁ„o
-possÌvel. O jogo apresenta 3 nÌveis (de 1 a 3) , onde cada nÌvel ter· uma quantidade ˙nica
-de barcos, vidas, bombas e, tambÈm, uma matriz de tamanho diferente. Ao digitar seu nome somente
-ser· considerado o primeiro ( Ex: Fulano Silva, Nome: Fulano )
+Este jogo de batalha naval consiste em acertar todos os barcos e fazer a maior pontua√ß√£o
+poss√≠vel. O jogo apresenta 3 n√≠veis (de 1 a 3) , onde cada n√≠vel ter√° uma quantidade √∫nica
+de barcos, vidas, bombas e, tamb√©m, uma matriz de tamanho diferente. Ao digitar seu nome somente
+ser√° considerado o primeiro ( Ex: Fulano Silva, Nome: Fulano )
 
-Quando o jogador acertar alguma parte do barco, sua pontuaÁ„o aumentar·, contudo, a pontuaÁ„o
-que ir· para o ranking sÛ ser· calculada no fim do jogo, ao acertar alguma bomba sua vida ser· subtraida
-por 1, caso o jogador perca todas as suas vidas sua pontuaÁ„o È zerada e n„o ir· para o ranking.
+Quando o jogador acertar alguma parte do barco, sua pontua√ß√£o aumentar√°, contudo, a pontua√ß√£o
+que ir√° para o ranking s√≥ ser√° calculada no fim do jogo, ao acertar alguma bomba sua vida ser√° subtraida
+por 1, caso o jogador perca todas as suas vidas sua pontua√ß√£o √© zerada e n√£o ir√° para o ranking.
 
 EXEMPLOS DO MAPA DO JOGO!
 
-Barcos ser„o reprensentados por um "+".
-Bombas ser„o reprensentadas por um "o".
-¡gua ser· representada por um "~".
+Barcos ser√£o reprensentados por um "+".
+Bombas ser√£o reprensentadas por um "o".
+√Ågua ser√° representada por um "~".
 
 
-    NÕVEL 3				   NÕVEL 2			  NÕVEL 1
+    N√çVEL 3				   N√çVEL 2			  N√çVEL 1
 
     A B C D E F G H I J K L M N O P        A B C D E F G H I J K L        A B C D E F G H   
     - - - - - - - - - - - - - - - -        - - - - - - - - - - - - 	  - - - - - - - -
@@ -36,6 +36,4 @@ Bombas ser„o reprensentadas por um "o".
 14| + + + + + . . . . . . . . . . . 	  
 15| . . . . . . . . . . . + + + . . 	  
 16| ~ ~ ~ ~ ~ ~ ~ + + . o . . . . . 	
-
-
 			
