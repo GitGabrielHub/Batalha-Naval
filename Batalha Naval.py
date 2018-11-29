@@ -1,7 +1,7 @@
 from time import sleep    ##### Jogo fecha depois de 5 segundos
 from conteudo import *    ##### Importar arquivo "conteudo"
 opcao = 0
-arquivo = open ('Regras.txt' , 'r')
+arquivo = open ('Regras.txt' , encoding='utf8')
 mostrar_regras (arquivo)
 arquivo.close()
 
@@ -163,7 +163,7 @@ Digite a opção: '''))
             arquivo.close()
 
         elif opcao == 3:
-            arquivo = open ('Regras.txt' , 'r')
+            arquivo = open ('Regras.txt' , encoding='utf8')
             mostrar_regras (arquivo) 
             arquivo.close()
             
