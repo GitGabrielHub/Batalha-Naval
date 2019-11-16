@@ -2,4 +2,4 @@
 
 Aluno: Antonio Gabriel Araújo Silva.                                                                                           
 Instituição: IFPB - Campina Grande, PB.                                                                                         
-Projeto cobrado na disciplina de Algoritmos e Lógica de programação.
+Jogo de apenas um jogador desenvolvido em Python, utilizando matriz, manipulação de arquivos, dentre outros conhecimentos.
